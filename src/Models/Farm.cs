@@ -9,6 +9,7 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
+        // public object ChickenHouses { get; internal set; }
 
         public List<PlowedField> PlowedFields {get; } = new List<PlowedField>();
 
