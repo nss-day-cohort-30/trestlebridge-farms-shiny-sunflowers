@@ -3,6 +3,7 @@ using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
+using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Actions {
     public class ChooseNaturalField {
@@ -30,6 +31,11 @@ namespace Trestlebridge.Actions {
              */
             // farm.PurchaseResource<IGrazing>(animal, choice);
 
+        }
+
+        internal static void CollectInput(Farm farm, Wildflower wildflower)
+        {
+            throw new NotImplementedException();
         }
     }
 }
