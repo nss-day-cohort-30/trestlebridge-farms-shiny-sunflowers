@@ -3,7 +3,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
-    public class Sunflower : IResource, IGrowAndCompost
+    public class Sunflower : IResource, ISeedAndCompost
     {
         private int _seedsProduced = 650;
         private double _compostWeight = 21.6;
