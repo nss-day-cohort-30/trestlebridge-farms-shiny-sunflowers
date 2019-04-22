@@ -7,6 +7,7 @@ namespace Trestlebridge
 {
     class Program
     {
+
         static void DisplayBanner ()
         {
             Console.Clear();
@@ -19,7 +20,6 @@ namespace Trestlebridge
                     +-++-++-++-++-+");
             Console.WriteLine();
         }
-
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
