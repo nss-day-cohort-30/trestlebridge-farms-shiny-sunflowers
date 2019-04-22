@@ -6,7 +6,7 @@ namespace Trestlebridge.Models.Animals {
     public class Goat : IResource, IGrazing, IMeatProducing {
 
         private Guid _id = Guid.NewGuid();
-        private double _meatProduced = 7.5;
+        private double _compostProduced = 7.5;
 
         private string _shortId {
             get {
