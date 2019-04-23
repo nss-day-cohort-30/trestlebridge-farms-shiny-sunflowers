@@ -25,6 +25,12 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
+
+            public int plantCount ()
+        {
+            return _plants.Count;
+        }
+
         public void AddResource (List<ISeedProducing> plants)  // TODO: Take out this method for boilerplate
         {
             if (_plants.Count + plants.Count <= _capacity) {
