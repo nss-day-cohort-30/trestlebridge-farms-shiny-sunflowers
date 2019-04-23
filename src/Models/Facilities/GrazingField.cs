@@ -25,6 +25,12 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
+        public int animalCount ()
+        {
+            return _animals.Count;
+        }
+
+
         public void AddResource (List<IGrazing> animals)  // TODO: Take out this method for boilerplate
         {
             if (_animals.Count + animals.Count <= _capacity) {
