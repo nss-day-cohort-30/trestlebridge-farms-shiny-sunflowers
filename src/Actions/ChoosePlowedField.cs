@@ -12,8 +12,7 @@ namespace Trestlebridge.Actions {
 
             for (int i = 0; i < farm.PlowedFields.Count; i++)
             {
-                Console.WriteLine ($"{i + 1}. Plowed Field");
-            }
+                Console.WriteLine ($"{i + 1}. Plowed Field ({farm.PlowedFields.Count()}) plants");
 
             Console.WriteLine ();
 
@@ -33,4 +32,4 @@ namespace Trestlebridge.Actions {
 
         }
     }
-}
+} }
