@@ -7,7 +7,7 @@ using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Actions {
     public class ChoosePlowedField {
-        public static void CollectInput (Farm farm, ISeedAndCompost plant) {
+        public static void CollectInput (Farm farm, ISeedProducing plant) {
             Console.Clear();
 
             for (int i = 0; i < farm.PlowedFields.Count; i++)
@@ -18,7 +18,7 @@ namespace Trestlebridge.Actions {
             Console.WriteLine ();
 
             // How can I output the type of animal chosen here?
-            Console.WriteLine ($"Place the plant where?");
+            Console.WriteLine ($"Place the {plant.Type} where?");
 
             Console.Write ("> ");
             int choice = Int32.Parse(Console.ReadLine ());
@@ -31,11 +31,6 @@ namespace Trestlebridge.Actions {
              */
             // farm.PurchaseResource<IGrazing>(animal, choice);
 
-        }
-
-        internal static void CollectInput(Farm farm, Sesame sesame)
-        {
-            throw new NotImplementedException();
         }
     }
 }

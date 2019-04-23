@@ -5,12 +5,12 @@ using Trestlebridge.Interfaces;
 
 
 namespace Trestlebridge.Models.Facilities {
-    public class NaturalField : IFacility<ISeedAndCompost>
+    public class NaturalField : IFacility<ICompostProducing>
     {
         private int _capacity = 10;
         private Guid _id = Guid.NewGuid();
 
-        private List<ISeedAndCompost> _plants = new List<ISeedAndCompost>();
+        private List<ICompostProducing> _plants = new List<ICompostProducing>();
 
         public double Capacity {
             get {
@@ -18,14 +18,14 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
-        public void AddResource (ISeedAndCompost plants)
+        public void AddResource (ICompostProducing plants)
         {
             if (_plants.Count < _capacity) {
                 _plants.Add(plants);
             }
         }
 
-        public void AddResource (List<ISeedAndCompost> plants)  // TODO: Take out this method for boilerplate
+        public void AddResource (List<ICompostProducing> plants)  // TODO: Take out this method for boilerplate
         {
             if (_plants.Count + plants.Count <= _capacity) {
                 _plants.AddRange(plants);
