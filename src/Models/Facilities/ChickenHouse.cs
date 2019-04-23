@@ -31,6 +31,10 @@ namespace Trestlebridge.Models.Facilities {
         {
             if (_chickens.Count + chickens.Count <= _capacity) {
                 _chickens.AddRange(chickens);
+            }else{
+                Console.WriteLine("That house is at capacity already, sorry.");
+                Console.WriteLine("Please choose another house.");
+                Console.WriteLine("If there isn't another chicken house, build one.");
             }
         }
 
