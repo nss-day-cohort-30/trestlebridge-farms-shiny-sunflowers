@@ -20,7 +20,7 @@ namespace Trestlebridge.Actions {
             Console.WriteLine ($"Place the Chicken where?");
 
             Console.Write ("> ");
-            int choice = Int32.Parse(Console.ReadLine ());
+            int choice = Int32.Parse(Console.ReadLine ()) - 1;
 
             farm.ChickenHouses[choice].AddResource(chicken);
 
