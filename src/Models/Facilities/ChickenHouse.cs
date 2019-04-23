@@ -4,34 +4,42 @@ using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
 
-namespace Trestlebridge.Models.Facilities {
+namespace Trestlebridge.Models.Facilities
+{
     public class ChickenHouse : IFacility<IEggFeatherMeatProducing>
     {
         private int _capacity = 15;
         private Guid _id = Guid.NewGuid();
 
-
-
         private List<IEggFeatherMeatProducing> _chickens = new List<IEggFeatherMeatProducing>();
 
-        public double Capacity {
-            get {
+        public double Capacity
+        {
+            get
+            {
                 return _capacity;
             }
         }
 
-        public void AddResource (IEggFeatherMeatProducing chickens)
+        public void AddResource(IEggFeatherMeatProducing chickens)
         {
-            if (_chickens.Count < _capacity) {
+            if (_chickens.Count < _capacity)
+            {
                 _chickens.Add(chickens);
             }
         }
 
-        public void AddResource (List<IEggFeatherMeatProducing> chickens)  // TODO: Take out this method for boilerplate
+        public void AddResource(List<IEggFeatherMeatProducing> chickens)  // TODO: Take out this method for boilerplate
         {
-            if (_chickens.Count + chickens.Count <= _capacity) {
+            if (_chickens.Count + chickens.Count <= _capacity)
+            {
                 _chickens.AddRange(chickens);
             }
+        }
+
+        public int chickenCount()
+        {
+            return _chickens.Count;
         }
 
         public override string ToString()

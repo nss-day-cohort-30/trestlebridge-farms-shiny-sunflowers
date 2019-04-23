@@ -10,14 +10,17 @@ namespace Trestlebridge.Models.Facilities {
         private int _capacity = 12;
         private Guid _id = Guid.NewGuid();
 
-
-
         private List<IEggFeatherProducing> _ducks = new List<IEggFeatherProducing>();
 
         public double Capacity {
             get {
                 return _capacity;
             }
+        }
+
+        public int duckCount ()
+        {
+            return _ducks.Count;
         }
 
         public void AddResource (IEggFeatherProducing ducks)
