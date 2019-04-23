@@ -18,6 +18,11 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
+        public int duckCount ()
+        {
+            return _ducks.Count;
+        }
+
         public void AddResource (IEggFeatherProducing ducks)
         {
             if (_ducks.Count < _capacity) {
