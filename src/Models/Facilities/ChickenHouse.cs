@@ -10,8 +10,6 @@ namespace Trestlebridge.Models.Facilities {
         private int _capacity = 15;
         private Guid _id = Guid.NewGuid();
 
-
-
         private List<IEggFeatherMeatProducing> _chickens = new List<IEggFeatherMeatProducing>();
 
         public double Capacity {
