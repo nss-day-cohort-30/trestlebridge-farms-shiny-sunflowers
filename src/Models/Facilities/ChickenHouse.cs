@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
 
-namespace Trestlebridge.Models.Facilities {
+namespace Trestlebridge.Models.Facilities
+{
     public class ChickenHouse : IFacility<IEggFeatherMeatProducing>
     {
         private int _capacity = 15;
@@ -14,27 +15,33 @@ namespace Trestlebridge.Models.Facilities {
 
         private List<IEggFeatherMeatProducing> _chickens = new List<IEggFeatherMeatProducing>();
 
-        public double Capacity {
-            get {
+        public double Capacity
+        {
+            get
+            {
                 return _capacity;
             }
         }
-
-        public void AddResource (IEggFeatherMeatProducing chickens)
+        public int chickenCount()
         {
-            if (_chickens.Count < _capacity) {
-                _chickens.Add(chickens);
-            }
+            return _chickens.Count;
         }
 
-        public void AddResource (List<IEggFeatherMeatProducing> chickens)  // TODO: Take out this method for boilerplate
+
+        public void AddResource(IEggFeatherMeatProducing chickens)
         {
-            if (_chickens.Count + chickens.Count <= _capacity) {
+            if (_chickens.Count < _capacity)
+            {
+                _chickens.Add(chickens);
+            }
+
+        }
+
+        public void AddResource(List<IEggFeatherMeatProducing> chickens)  // TODO: Take out this method for boilerplate
+        {
+            if (_chickens.Count + chickens.Count <= _capacity)
+            {
                 _chickens.AddRange(chickens);
-            }else{
-                Console.WriteLine("That house is at capacity already, sorry.");
-                Console.WriteLine("Please choose another house.");
-                Console.WriteLine("If there isn't another chicken house, build one.");
             }
         }
 
