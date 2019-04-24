@@ -3,6 +3,7 @@ using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
+using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions
 {
@@ -48,7 +49,23 @@ namespace Trestlebridge.Actions
 ******* If there are no other Grazing Fields available, build one.  ****
               ");
                 Console.ReadLine();
-                ChooseGrazingField.CollectInput(farm, animal);
+                Console.WriteLine($@"
+ _______________________________________________
+| Would you like to create a new Grazing Field? |
+|         Press 1 for yes or 2 for no           |
+ -----------------------------------------------
+");
+                 Console.Write ("> ");
+
+            string input = Console.ReadLine ();
+            switch (Int32.Parse(input))
+            {
+                case 1:
+                    farm.AddGrazingField(new GrazingField());
+                    ChooseGrazingField.CollectInput(farm, animal);
+                    break;
+                case 2:
+                    break;
             }
 
 
@@ -60,4 +77,5 @@ namespace Trestlebridge.Actions
 
         }
     }
+}
 }
