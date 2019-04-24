@@ -11,6 +11,8 @@ namespace Trestlebridge.Models.Facilities
         private int _capacity = 15;
         private Guid _id = Guid.NewGuid();
 
+
+
         private List<IEggFeatherMeatProducing> _chickens = new List<IEggFeatherMeatProducing>();
 
         public double Capacity
@@ -20,6 +22,11 @@ namespace Trestlebridge.Models.Facilities
                 return _capacity;
             }
         }
+        public int chickenCount()
+        {
+            return _chickens.Count;
+        }
+
 
         public void AddResource(IEggFeatherMeatProducing chickens)
         {
@@ -27,6 +34,7 @@ namespace Trestlebridge.Models.Facilities
             {
                 _chickens.Add(chickens);
             }
+
         }
 
         public void AddResource(List<IEggFeatherMeatProducing> chickens)  // TODO: Take out this method for boilerplate
@@ -35,11 +43,6 @@ namespace Trestlebridge.Models.Facilities
             {
                 _chickens.AddRange(chickens);
             }
-        }
-
-        public int chickenCount()
-        {
-            return _chickens.Count;
         }
 
         public override string ToString()
