@@ -16,7 +16,6 @@ namespace Trestlebridge.Actions
       for (int i = 0; i < farm.NaturalFields.Count; i++)
       {
 
-
         if (farm.NaturalFields[i].plantCount() < farm.NaturalFields[i].Capacity)
         {
           Console.WriteLine($"{i + 1}. Natural field ({farm.NaturalFields[i].plantCount()}) plants");
@@ -44,19 +43,13 @@ namespace Trestlebridge.Actions
       else
       {
         Console.WriteLine($@"
-             *************** I'm sorry, that facility is at capacity. ***************
+*************** I'm sorry, that facility is at capacity. ***************
 **************      Please choose another facility.     ****************
-******* If there are no other chicken houses available, build one.  ****");
+******* If there are no other natural fields, build one.  ****");
         Console.ReadLine();
         ChooseNaturalField.CollectInput(farm, plant);
 
       }
-
-      /*
-          Couldn't get this to work. Can you?
-          Stretch goal. Only if the app is fully functional.
-       */
-      // farm.PurchaseResource<IGrazing>(animal, choice);
 
     }
   }
