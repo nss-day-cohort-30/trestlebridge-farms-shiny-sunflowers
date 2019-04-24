@@ -33,8 +33,9 @@ namespace Trestlebridge.Actions
             farm.GrazingFields[choice].AddResource(animal);
             } else {
               Console.WriteLine($@"
-**** That facililty is not large enough ****
-****     Please choose another one      ****
+*************** I'm sorry, that facility is at capacity. ***************
+**************      Please choose another facility.     ****************
+******* If there are no other Grazing Fields available, build one.  ****
               ");
               Console.ReadLine();
               ChooseGrazingField.CollectInput(farm, animal);

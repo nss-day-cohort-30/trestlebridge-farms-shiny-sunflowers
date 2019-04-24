@@ -36,7 +36,6 @@ namespace Trestlebridge.Actions {
 *************** I'm sorry, that facility is at capacity. ***************
 **************      Please choose another facility.     ****************
 ******* If there are no other chicken houses available, build one.  ****
-
 ");
                 Console.ReadLine();
                 ChooseChickenHouse.CollectInput(farm, chicken);
