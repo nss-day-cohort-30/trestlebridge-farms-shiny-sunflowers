@@ -15,7 +15,7 @@ namespace Trestlebridge.Actions
 
       for (int i = 0; i < farm.NaturalFields.Count; i++)
       {
-        //  Console.WriteLine ($"{i + 1}. Natural Field ({farm.NaturalFields[i].plantCount()}) plants");
+
 
         if (farm.NaturalFields[i].plantCount() < farm.NaturalFields[i].Capacity)
         {
@@ -23,7 +23,7 @@ namespace Trestlebridge.Actions
         }
         else
         {
-          Console.WriteLine($"{i + 1}. Grazing Field is full. ({farm.NaturalFields[i].plantCount()}) plants");
+          Console.WriteLine($"{i + 1}. Natural Field is full. ({farm.NaturalFields[i].plantCount()}) plants");
         }
       }
 
@@ -44,9 +44,9 @@ namespace Trestlebridge.Actions
       else
       {
         Console.WriteLine($@"
-                **** That facililty is not large enough ****
-                ****     Please choose another one      ****
-              ");
+             *************** I'm sorry, that facility is at capacity. ***************
+**************      Please choose another facility.     ****************
+******* If there are no other chicken houses available, build one.  ****");
         Console.ReadLine();
         ChooseNaturalField.CollectInput(farm, plant);
 
