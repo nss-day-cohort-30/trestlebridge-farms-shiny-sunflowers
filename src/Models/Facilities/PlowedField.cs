@@ -43,8 +43,13 @@ namespace Trestlebridge.Models.Facilities {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Plowed field {shortId} has {this._plants.Count} plants\n");
-            this._plants.ForEach(a => output.Append($"   {a}\n"));
+            if (this._plants.Count > 1) {
+                output.Append($"Natural field {shortId} has {this._plants.Count} plants\n");
+                this._plants.ForEach(a => output.Append($"   {a}\n"));
+            } else {
+                output.Append($"Natural field {shortId} has {this._plants.Count} plant\n");
+                this._plants.ForEach(a => output.Append($"   {a}\n"));
+            }
 
             return output.ToString();
         }
