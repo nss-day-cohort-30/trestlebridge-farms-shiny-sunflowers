@@ -17,7 +17,7 @@ namespace Trestlebridge.Actions {
                 }
                 else
                 {
-                Console.WriteLine($"{i+1} Chicken House is full. ({farm.ChickenHouses[i].chickenCount()})");
+                Console.WriteLine($"{i+1} Chicken House is full. ({farm.ChickenHouses[i].chickenCount()}) chickens");
                 }
 
             }

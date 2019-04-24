@@ -34,8 +34,6 @@ namespace Trestlebridge.Actions
       Console.Write("> ");
       int choice = Int32.Parse(Console.ReadLine()) - 1;
 
-      farm.NaturalFields[choice].AddResource(plant);
-
       if (farm.NaturalFields[choice].plantCount() < farm.NaturalFields[choice].Capacity)
       {
         farm.NaturalFields[choice].AddResource(plant);

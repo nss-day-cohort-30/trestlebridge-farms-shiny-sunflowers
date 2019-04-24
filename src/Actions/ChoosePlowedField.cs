@@ -15,7 +15,14 @@ namespace Trestlebridge.Actions
 
             for (int i = 0; i < farm.PlowedFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Plowed Field ({farm.PlowedFields[i].plantCount()}) plants");
+                if (farm.NaturalFields[i].plantCount() < farm.NaturalFields[i].Capacity)
+                {
+                    Console.WriteLine($"{i + 1}. Plowed Field ({farm.PlowedFields[i].plantCount()}) plants");
+                }
+                else
+                {
+                    Console.WriteLine($"{i + 1}. Plowed Field is full. ({farm.PlowedFields[i].plantCount()}) plants");
+                }
 
                 Console.WriteLine();
 
@@ -25,7 +32,19 @@ namespace Trestlebridge.Actions
                 Console.Write("> ");
                 int choice = Int32.Parse(Console.ReadLine()) - 1;
 
-                farm.PlowedFields[choice].AddResource(plant);
+                if (farm.PlowedFields[choice].plantCount() < farm.PlowedFields[choice].Capacity)
+                {
+                    farm.PlowedFields[choice].AddResource(plant);
+                }
+                else
+                {
+                    Console.WriteLine($@"
+*************** I'm sorry, that facility is at capacity. ***************
+**************      Please choose another facility.     ****************
+******* If there are no other Plowed fields, build one.  ****");
+                    Console.ReadLine();
+                    ChoosePlowedField.CollectInput(farm, plant);
+                }
 
                 /*
                     Couldn't get this to work. Can you?
