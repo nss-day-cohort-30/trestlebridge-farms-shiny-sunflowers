@@ -7,8 +7,7 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class DuckHouse : IFacility<IEggFeatherProducing>
     {
-        // private int _capacity = 12;
-        private int _capacity = 2;
+        private int _capacity = 12;
         private Guid _id = Guid.NewGuid();
 
         private List<IEggFeatherProducing> _ducks = new List<IEggFeatherProducing>();

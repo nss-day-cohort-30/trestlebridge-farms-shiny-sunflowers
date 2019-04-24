@@ -8,8 +8,7 @@ namespace Trestlebridge.Models.Facilities
 {
     public class ChickenHouse : IFacility<IEggFeatherMeatProducing>
     {
-        private int _capacity = 2;
-        // private int _capacity = 15;
+        private int _capacity = 15;
         private Guid _id = Guid.NewGuid();
 
 
