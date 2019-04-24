@@ -14,10 +14,17 @@ namespace Trestlebridge.Actions
 
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
-                if (farm.GrazingFields[i].animalCount() < farm.GrazingFields[i].Capacity) {
-                Console.WriteLine($"{i + 1}. Grazing Field ({farm.GrazingFields[i].animalCount()}) animals");
-                } else {
-                Console.WriteLine($"{i + 1}. Grazing Field is full. ({farm.GrazingFields[i].animalCount()}) animals");
+                if (farm.GrazingFields[i].animalCount() == 1)
+                {
+                    Console.WriteLine($"{i + 1}. Grazing Field has ({farm.GrazingFields[i].animalCount()}) animal");
+                }
+                else if (farm.GrazingFields[i].animalCount() < farm.GrazingFields[i].Capacity)
+                {
+                    Console.WriteLine($"{i + 1}. Grazing Field has ({farm.GrazingFields[i].animalCount()}) animals");
+                }
+                else
+                {
+                    Console.WriteLine($"{i + 1}. Grazing Field is full. ({farm.GrazingFields[i].animalCount()}) animals");
                 }
             }
 
@@ -29,16 +36,19 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine()) - 1;
 
-            if (farm.GrazingFields[choice].animalCount() < farm.GrazingFields[choice].Capacity) {
-            farm.GrazingFields[choice].AddResource(animal);
-            } else {
-              Console.WriteLine($@"
+            if (farm.GrazingFields[choice].animalCount() < farm.GrazingFields[choice].Capacity)
+            {
+                farm.GrazingFields[choice].AddResource(animal);
+            }
+            else
+            {
+                Console.WriteLine($@"
 *************** I'm sorry, that facility is at capacity. ***************
 **************      Please choose another facility.     ****************
 ******* If there are no other Grazing Fields available, build one.  ****
               ");
-              Console.ReadLine();
-              ChooseGrazingField.CollectInput(farm, animal);
+                Console.ReadLine();
+                ChooseGrazingField.CollectInput(farm, animal);
             }
 
 

@@ -24,20 +24,7 @@ namespace Trestlebridge.Actions {
                     ChoosePlowedField.CollectInput(farm, new Sesame());
                     break;
                 case 2:
-                    Console.WriteLine ();
-                    Console.WriteLine ("Where are you planting it?");
-
-                    Console.Write ("> ");
-                    string fieldChoice = Console.ReadLine ();
-
-                    switch (Int32.Parse(fieldChoice)) {
-                        case 1:
-                        ChooseNaturalField.CollectInput(farm, new Sunflower());
-                        break;
-                        case 2:
-                        ChoosePlowedField.CollectInput(farm, new Sunflower());
-                        break;
-                    }
+                    ChooseNaturalOrPlowedField.CollectInput(farm, new Sunflower());
                     break;
                 case 3:
                     ChooseNaturalField.CollectInput(farm, new Wildflower());

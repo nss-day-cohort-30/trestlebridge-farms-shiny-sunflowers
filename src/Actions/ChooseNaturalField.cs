@@ -15,10 +15,12 @@ namespace Trestlebridge.Actions
 
       for (int i = 0; i < farm.NaturalFields.Count; i++)
       {
-
-        if (farm.NaturalFields[i].plantCount() < farm.NaturalFields[i].Capacity)
+        if (farm.NaturalFields[i].plantCount() == 1) {
+          Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()}) plant");
+        }
+        else if (farm.NaturalFields[i].plantCount() < farm.NaturalFields[i].Capacity)
         {
-          Console.WriteLine($"{i + 1}. Natural field ({farm.NaturalFields[i].plantCount()}) plants");
+          Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()}) plants");
         }
         else
         {
@@ -33,8 +35,6 @@ namespace Trestlebridge.Actions
 
       Console.Write("> ");
       int choice = Int32.Parse(Console.ReadLine()) - 1;
-
-      farm.NaturalFields[choice].AddResource(plant);
 
       if (farm.NaturalFields[choice].plantCount() < farm.NaturalFields[choice].Capacity)
       {
