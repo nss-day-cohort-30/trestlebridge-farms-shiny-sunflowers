@@ -52,37 +52,37 @@ namespace Trestlebridge.Actions
 -----------------------((press enter to continue))----------------------
               ");
                 Console.ReadLine();
-            // after user hits enter ask if they want to create a new field
+                // after user hits enter ask if they want to create a new field
                 Console.WriteLine($@"
  _______________________________________________
 | Would you like to create a new Grazing Field? |
 |         Press 1 for yes or 2 for no           |
  -----------------------------------------------
 ");
-                 Console.Write ("> ");
-            // collect the user's input and store it in the string "input"
-            string input = Console.ReadLine ();
-            // parse the string and create a switch case
-            switch (Int32.Parse(input))
-            {
-                // create a new GrazingField and add it to the farm.
-                // go to the ChooseGrazingField menu and pass the animal and farm
-                case 1:
-                    farm.AddGrazingField(new GrazingField());
-                    ChooseGrazingField.CollectInput(farm, animal);
-                    break;
-                case 2:
-                    break;
+                Console.Write("> ");
+                // collect the user's input and store it in the string "input"
+                string input = Console.ReadLine();
+                // parse the string and create a switch case
+                switch (Int32.Parse(input))
+                {
+                    // create a new GrazingField and add it to the farm.
+                    // go to the ChooseGrazingField menu and pass the animal and farm
+                    case 1:
+                        farm.AddGrazingField(new GrazingField());
+                        ChooseGrazingField.CollectInput(farm, animal);
+                        break;
+                    case 2:
+                        break;
+                }
+
+
+                /*
+                    Couldn't get this to work. Can you?
+                    Stretch goal. Only if the app is fully functional.
+                 */
+                // farm.PurchaseResource<IGrazing>(animal, choice);
+
             }
-
-
-            /*
-                Couldn't get this to work. Can you?
-                Stretch goal. Only if the app is fully functional.
-             */
-            // farm.PurchaseResource<IGrazing>(animal, choice);
-
         }
     }
-}
 }
