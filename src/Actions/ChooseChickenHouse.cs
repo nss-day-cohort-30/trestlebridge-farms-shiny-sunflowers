@@ -3,6 +3,7 @@ using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
+using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions
 {
@@ -49,9 +50,34 @@ namespace Trestlebridge.Actions
 *************** I'm sorry, that facility is at capacity. ***************
 **************      Please choose another facility.     ****************
 ******* If there are no other chicken houses available, build one.  ****
+-----------------------((press enter to continue))----------------------
 ");
                 Console.ReadLine();
-                ChooseChickenHouse.CollectInput(farm, chicken);
+
+                // after user hits enter ask if they want to create a new field
+                Console.WriteLine($@"
+ _______________________________________________
+| Would you like to create a new Chicken house? |
+|         Press 1 for yes or 2 for no           |
+ -----------------------------------------------
+");
+                Console.Write("> ");
+                // collect the user's input and store it in the string "input"
+                string input = Console.ReadLine();
+                // parse the string and create a switch case
+                switch (Int32.Parse(input))
+                {
+                    // create a new chicken house and add it to the farm.
+                    // go to the chickenhouse menu and pass the farm and chicken in.
+                    case 1:
+                        farm.AddChickenHouse(new ChickenHouse());
+                        ChooseChickenHouse.CollectInput(farm, chicken);
+                        break;
+                    case 2:
+                        break;
+                }
+
+               ChooseChickenHouse.CollectInput(farm, chicken);
             }
 
 
