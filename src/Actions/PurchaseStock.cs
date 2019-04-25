@@ -46,6 +46,11 @@ namespace Trestlebridge.Actions {
                     ChooseGrazingField.CollectInput(farm, new Sheep());
                     break;
                 default:
+                    Console.Clear();
+                    Console.Write("Not a valid option. Press enter to try again");
+                    Console.ReadLine();
+                    Console.Clear();
+                    PurchaseStock.CollectInput(farm);
                     break;
             }
         }

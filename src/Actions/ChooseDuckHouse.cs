@@ -17,7 +17,7 @@ namespace Trestlebridge.Actions
                 //if single duck - use the singular message
                 if (farm.DuckHouses[i].duckCount() == 1)
                 {
-                    Console.WriteLine("This duck house has 1 duck");
+                    Console.WriteLine($"{i + 1}. This duck house has 1 duck");
                 }
                 else
                 {
