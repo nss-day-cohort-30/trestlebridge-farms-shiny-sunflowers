@@ -28,6 +28,7 @@ namespace Trestlebridge
 
             while (true)
             {
+
                 DisplayBanner();
                 Console.WriteLine("1. Create Facility");
                 Console.WriteLine("2. Purchase Animals");
@@ -38,7 +39,11 @@ namespace Trestlebridge
 
                 Console.WriteLine("Choose a FARMS option");
                 Console.Write("> ");
+                try{
                 string option = Console.ReadLine();
+                }catch{
+                    Console.WriteLine
+                }
 
                 if (option == "1")
                 {
