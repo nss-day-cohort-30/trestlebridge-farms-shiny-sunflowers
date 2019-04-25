@@ -17,17 +17,17 @@ namespace Trestlebridge.Actions
             {
                 if (farm.ChickenHouses[i].chickenCount() == 1)
                 {
-                    Console.WriteLine("This chicken house has 1 chicken");
+                    Console.WriteLine($"{i + 1}: This chicken house has 1 chicken");
                 }
                 else
                 {
                     if (farm.ChickenHouses[i].chickenCount() < farm.ChickenHouses[i].Capacity)
                     {
-                        Console.WriteLine($"{i + 1}. Chicken House has ({farm.ChickenHouses[i].chickenCount()}) chickens");
+                        Console.WriteLine($"{i + 1}: Chicken House has ({farm.ChickenHouses[i].chickenCount()}) chickens");
                     }
                     else
                     {
-                        Console.WriteLine($"{i + 1} Chicken House is full. {farm.ChickenHouses[i].chickenCount()}");
+                        Console.WriteLine($"{i + 1}: Chicken House is full. {farm.ChickenHouses[i].chickenCount()}");
                     }
                 }
 
@@ -54,7 +54,7 @@ namespace Trestlebridge.Actions
 ");
                 Console.ReadLine();
 
-                // after user hits enter ask if they want to create a new field
+                // after user hits enter ask if they want to create a new chicken house
                 Console.WriteLine($@"
  _______________________________________________
 | Would you like to create a new Chicken house? |
@@ -77,11 +77,8 @@ namespace Trestlebridge.Actions
                         break;
                 }
 
-               ChooseChickenHouse.CollectInput(farm, chicken);
+                ChooseChickenHouse.CollectInput(farm, chicken);
             }
-
-
-
         }
     }
 }
