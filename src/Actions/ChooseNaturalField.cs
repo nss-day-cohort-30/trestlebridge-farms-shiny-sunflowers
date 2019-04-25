@@ -29,15 +29,15 @@ namespace Trestlebridge.Actions
             {
                 if (farm.NaturalFields[i].plantCount() == 1)
                 {
-                    Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()}) plant");
+                    Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()} plant)");
                 }
                 else if (farm.NaturalFields[i].plantCount() < farm.NaturalFields[i].Capacity)
                 {
-                    Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()}) plants");
+                    Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()} plants)");
                 }
                 else
                 {
-                    Console.WriteLine($"{i + 1}. Natural Field is full. ({farm.NaturalFields[i].plantCount()}) plants");
+                    Console.WriteLine($"{i + 1}. Natural Field is full. ({farm.NaturalFields[i].plantCount()} plants)");
                 }
             }
 
