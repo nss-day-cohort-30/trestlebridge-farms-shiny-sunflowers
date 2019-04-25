@@ -29,15 +29,15 @@ namespace Trestlebridge.Actions
             {
                 if (farm.NaturalFields[i].plantCount() == 1)
                 {
-                    Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()}) plant");
+                    Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()} plant)");
                 }
                 else if (farm.NaturalFields[i].plantCount() < farm.NaturalFields[i].Capacity)
                 {
-                    Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()}) plants");
+                    Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()} plants)");
                 }
                 else
                 {
-                    Console.WriteLine($"{i + 1}. Natural Field is full. ({farm.NaturalFields[i].plantCount()}) plants");
+                    Console.WriteLine($"{i + 1}. Natural Field is full. ({farm.NaturalFields[i].plantCount()} plants)");
                 }
             }
 
@@ -82,8 +82,8 @@ namespace Trestlebridge.Actions
                 // parse the string and create a switch case
                 switch (Int32.Parse(input))
                 {
-                    // create a new GrazingField and add it to the farm.
-                    // go to the ChooseGrazingField menu and pass the animal and farm
+                    // create a new NaturalField and add it to the farm.
+                    // go to the ChooseNaturalField menu and pass the plant and farm
                     case 1:
                         farm.AddNaturalField(new NaturalField());
                         ChooseNaturalField.CollectInput(farm, plant);
