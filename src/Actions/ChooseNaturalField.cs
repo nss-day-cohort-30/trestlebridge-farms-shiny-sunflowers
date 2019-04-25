@@ -82,8 +82,8 @@ namespace Trestlebridge.Actions
                 // parse the string and create a switch case
                 switch (Int32.Parse(input))
                 {
-                    // create a new GrazingField and add it to the farm.
-                    // go to the ChooseGrazingField menu and pass the animal and farm
+                    // create a new NaturalField and add it to the farm.
+                    // go to the ChooseNaturalField menu and pass the plant and farm
                     case 1:
                         farm.AddNaturalField(new NaturalField());
                         ChooseNaturalField.CollectInput(farm, plant);
