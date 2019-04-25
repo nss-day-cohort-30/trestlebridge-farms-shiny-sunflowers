@@ -78,7 +78,7 @@ namespace Trestlebridge
                 }
                 catch
                 {
-                    Console.WriteLine("not a valid entry. Try again.");
+                    Console.WriteLine("Not a valid entry. Try again.");
                     Console.ReadLine();
                 }
             }
