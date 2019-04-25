@@ -58,7 +58,7 @@ namespace Trestlebridge.Actions
             {
                 Console.Clear();
                 Console.WriteLine($@"
-~ I'm sorry! that facility can only hold ({farm.NaturalFields[0].Capacity} plants ~
+~ I'm sorry! That facility can only hold ({farm.NaturalFields[0].Capacity}) plants ~
 
 ************************************************************************
 **************      Please choose another facility.     ****************
