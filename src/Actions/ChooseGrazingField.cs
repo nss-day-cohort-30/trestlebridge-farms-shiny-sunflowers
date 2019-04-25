@@ -46,11 +46,15 @@ namespace Trestlebridge.Actions
             // if GrazingFields is at capacity then don't add animal and display this message
             {
                 Console.WriteLine($@"
-*************** I'm sorry, that facility is at capacity. ***************
+~ I'm sorry! That facility can only hold ({farm.GrazingFields[0].Capacity}) animals ~
+
+************************************************************************
 **************      Please choose another facility.     ****************
-******* If there are no other Grazing Fields available, build one.  ****
+********** If there are no other natural fields, build one.  ***********
+************************************************************************
+
 -----------------------((press enter to continue))----------------------
-              ");
+");
                 Console.ReadLine();
                 // after user hits enter ask if they want to create a new field
                 Console.WriteLine($@"

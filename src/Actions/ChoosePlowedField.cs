@@ -43,9 +43,15 @@ namespace Trestlebridge.Actions
                 else
                 {
                     Console.WriteLine($@"
-*************** I'm sorry, that facility is at capacity. ***************
+~ I'm sorry! That facility can only hold ({farm.PlowedFields[0].Capacity}) plants ~
+
+************************************************************************
 **************      Please choose another facility.     ****************
-******* If there are no other Plowed fields, build one.  ****");
+********** If there are no other natural fields, build one.  ***********
+************************************************************************
+
+-----------------------((press enter to continue))----------------------
+");
                     Console.ReadLine();
                     ChoosePlowedField.CollectInput(farm, plant);
                 }
