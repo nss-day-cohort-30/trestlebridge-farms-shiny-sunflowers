@@ -26,8 +26,7 @@ namespace Trestlebridge.Actions
 
       List<ISeedProducing> manyPlants = Enumerable.Repeat(plant, number).ToList();
 
-
-
+      Console.Clear();
 
       for (int i = 0; i < farm.PlowedFields.Count; i++)
       {

@@ -52,7 +52,7 @@ namespace Trestlebridge.Models.Facilities
             if (this._animals.Count > 1 || this._animals.Count == 0)
             {
                 output.Append($@"
-Grazing field {shortId} has {this._animals.Count} animals:  "  );
+Grazing field {shortId} has {this._animals.Count} animals:  ");
                 var animalTypes = _animals.GroupBy(thisType => thisType.Type);
                 foreach (var type in animalTypes)
                 {
