@@ -28,17 +28,19 @@ namespace Trestlebridge
 
             while (true)
             {
+                try
+                {
 
-                DisplayBanner();
-                Console.WriteLine("1. Create Facility");
-                Console.WriteLine("2. Purchase Animals");
-                Console.WriteLine("3. Purchase Seeds");
-                Console.WriteLine("4. Display Farm Status");
-                Console.WriteLine("5. Exit");
-                Console.WriteLine();
+                    DisplayBanner();
+                    Console.WriteLine("1. Create Facility");
+                    Console.WriteLine("2. Purchase Animals");
+                    Console.WriteLine("3. Purchase Seeds");
+                    Console.WriteLine("4. Display Farm Status");
+                    Console.WriteLine("5. Exit");
+                    Console.WriteLine();
 
-                Console.WriteLine("Choose a FARMS option");
-                Console.Write("> ");
+                    Console.WriteLine("Choose a FARMS option");
+                    Console.Write("> ");
 
                     string option = Console.ReadLine();
 
@@ -75,6 +77,14 @@ namespace Trestlebridge
                         Console.WriteLine($"Invalid option: {option}");
                         Console.ReadLine();
                     }
+                }
+
+                catch
+                {
+                    Console.WriteLine("oops, not a valid option. Try again");
+                    Console.ReadLine();
+
+                }
             }
         }
     }
