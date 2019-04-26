@@ -24,12 +24,11 @@ namespace Trestlebridge.Models.Facilities {
                 _animals.Add(animal);
             }
         }
-
+        
         public int animalCount ()
         {
             return _animals.Count;
         }
-
 
         public void AddResource (List<IGrazing> animals)  // TODO: Take out this method for boilerplate
         {
