@@ -78,7 +78,7 @@ namespace Trestlebridge.Models.Facilities
             }
             else
             {
-                output.Append($"Natural field {shortId} has {this._plants.Count} row of plants\n");
+                output.Append($"Natural field {shortId} ({naturalFieldString})\n");
                 this._plants.ForEach(a => output.Append($"   {a}\n"));
             }
 
