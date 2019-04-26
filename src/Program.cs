@@ -39,8 +39,7 @@ namespace Trestlebridge
 
                 Console.WriteLine("Choose a FARMS option");
                 Console.Write("> ");
-                try
-                {
+
                     string option = Console.ReadLine();
 
                     if (option == "1")
@@ -74,13 +73,8 @@ namespace Trestlebridge
                     else
                     {
                         Console.WriteLine($"Invalid option: {option}");
+                        Console.ReadLine();
                     }
-                }
-                catch
-                {
-                    Console.WriteLine("Not a valid entry. Try again.");
-                    Console.ReadLine();
-                }
             }
         }
     }

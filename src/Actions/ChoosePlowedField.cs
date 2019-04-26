@@ -16,7 +16,7 @@ namespace Trestlebridge.Actions
     {
       Console.Clear();
 
-      Console.WriteLine($"How many {plant.Type} would you like to plant?");
+      Console.WriteLine($"How many {plant.Type}s would you like to plant?");
 
       // store that number in the variable "number"
       // Use Enumberable.Repeat() to put x("number") amount of plants("plant") in new list named "manyPlants"
@@ -33,21 +33,21 @@ namespace Trestlebridge.Actions
       {
         if (farm.PlowedFields[i].plantCount() == 1)
         {
-          Console.WriteLine($"{i + 1}. Plowed Field ({farm.PlowedFields[i].plantCount()} plant)");
+          Console.WriteLine($"{i + 1}. Plowed Field ({farm.PlowedFields[i].plantCount()} row of plants)");
         }
         else if (farm.PlowedFields[i].plantCount() < farm.PlowedFields[i].Capacity)
         {
-          Console.WriteLine($"{i + 1}. Plowed Field ({farm.PlowedFields[i].plantCount()} plants)");
+          Console.WriteLine($"{i + 1}. Plowed Field ({farm.PlowedFields[i].plantCount()} rows of plants)");
         }
         else
         {
-          Console.WriteLine($"{i + 1}. Plowed Field is full. ({farm.PlowedFields[i].plantCount()} plants)");
+          Console.WriteLine($"{i + 1}. Plowed Field is full. ({farm.PlowedFields[i].plantCount()} rows of plants)");
         }
       }
       Console.WriteLine();
 
       // How can I output the type of plant chosen here?
-      Console.WriteLine($"Place the {plant.Type} where?");
+      Console.WriteLine($"Place the {plant.Type}s where?");
 
       Console.Write("> ");
       int choice = Int32.Parse(Console.ReadLine()) - 1;
@@ -88,6 +88,9 @@ namespace Trestlebridge.Actions
           // go to the ChoosePlowedField menu and pass the animal and farm
           case 1:
             farm.AddPlowedField(new PlowedField());
+            Console.Clear();
+            Console.WriteLine("Success! One Plowed Field Added. Press enter to continue.");
+            Console.ReadLine();
             ChoosePlowedField.CollectInput(farm, plant);
             break;
           case 2:
