@@ -17,7 +17,7 @@ namespace Trestlebridge.Actions
       Console.WriteLine($"How many {animal.Type}s would you like to add?");
 
       // store that number in the variable "number"
-      // Use Enumberable.Repeat() to put x("number") amount of plants("plant") in new list named "manyPlants"
+      // Use Enumberable.Repeat() to put x("number") amount of animals("animal") in new list named "manyAnimals"
       Console.Write("> ");
 
       int number = Int32.Parse(Console.ReadLine());
