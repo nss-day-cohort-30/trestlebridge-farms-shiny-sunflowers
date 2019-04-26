@@ -36,10 +36,10 @@ namespace Trestlebridge.Actions
                 {
                     Console.WriteLine($"{i + 1}. Natural field has ({farm.NaturalFields[i].plantCount()} rows of plants)");
                 }
-                else
-                {
-                    Console.WriteLine($"{i + 1}. Natural Field is full. ({farm.NaturalFields[i].plantCount()} rows of plants)");
-                }
+                // else
+                // {
+                //     Console.WriteLine($"{i + 1}. Natural Field is full. ({farm.NaturalFields[i].plantCount()} rows of plants)");
+                // }
             }
 
             Console.WriteLine();

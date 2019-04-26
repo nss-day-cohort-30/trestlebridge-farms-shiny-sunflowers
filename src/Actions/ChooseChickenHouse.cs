@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
@@ -13,24 +14,32 @@ namespace Trestlebridge.Actions
         {
             Console.Clear();
 
+            Console.WriteLine($"How many {chicken.Type}s would you like to add?");
+
+            // store that number in the variable "number"
+            // Use Enumberable.Repeat() to put x("number") amount of animals("animal") in new list named "manyAnimals"
+            Console.Write("> ");
+
+            int number = Int32.Parse(Console.ReadLine());
+
+            List<IEggFeatherMeatProducing> manyChickens = Enumerable.Repeat(chicken, number).ToList();
+            Console.Clear();
+
             for (int i = 0; i < farm.ChickenHouses.Count; i++)
             {
                 if (farm.ChickenHouses[i].chickenCount() == 1)
                 {
                     Console.WriteLine($"{i + 1}: This chicken house has 1 chicken");
                 }
-                else
+                else if (farm.ChickenHouses[i].chickenCount() < farm.ChickenHouses[i].Capacity)
                 {
-                    if (farm.ChickenHouses[i].chickenCount() < farm.ChickenHouses[i].Capacity)
-                    {
-                        Console.WriteLine($"{i + 1}: Chicken House has ({farm.ChickenHouses[i].chickenCount()}) chickens");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{i + 1}: Chicken House is full. {farm.ChickenHouses[i].chickenCount()}");
-                    }
+                    Console.WriteLine($"{i + 1}: Chicken House has ({farm.ChickenHouses[i].chickenCount()}) chickens");
                 }
-
+                // else
+                // {
+                //     Console.WriteLine($"{i + 1}: Chicken House is full. {farm.ChickenHouses[i].chickenCount()}");
+                // }
+                // }
             }
 
             Console.WriteLine();
@@ -40,9 +49,9 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine()) - 1;
 
-            if (farm.ChickenHouses[choice].chickenCount() < farm.ChickenHouses[choice].Capacity)
+            if (farm.ChickenHouses[choice].chickenCount() + manyChickens.Count() <= farm.ChickenHouses[choice].Capacity)
             {
-                farm.ChickenHouses[choice].AddResource(chicken);
+                farm.ChickenHouses[choice].AddResource(manyChickens);
             }
             else
             {
