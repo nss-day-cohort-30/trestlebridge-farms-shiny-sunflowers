@@ -8,6 +8,9 @@ namespace Trestlebridge
     class Program
     {
         static void DisplayBanner()
+
+
+
         {
             Console.Clear();
             Console.WriteLine();
@@ -24,9 +27,12 @@ namespace Trestlebridge
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
 
+
+
             Farm Trestlebridge = new Farm();
 
             while (true)
+
             {
                 // try
                 // {
@@ -46,6 +52,8 @@ namespace Trestlebridge
 
                     if (option == "1")
                     {
+                        
+
                         DisplayBanner();
                         CreateFacility.CollectInput(Trestlebridge);
                     }

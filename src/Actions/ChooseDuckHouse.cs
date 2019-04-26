@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
@@ -14,6 +15,16 @@ namespace Trestlebridge.Actions
         {
             Console.Clear();
 
+
+
+            Console.WriteLine($"How many ducks would you like to add?");
+
+
+            int number = Int32.Parse(Console.ReadLine());
+
+
+             List<IEggFeatherProducing> manyDucks = Enumerable.Repeat(duck, number).ToList();
+
             for (int i = 0; i < farm.DuckHouses.Count; i++)
             {
                 //if single duck - use the singular message
@@ -27,10 +38,10 @@ namespace Trestlebridge.Actions
                     {
                         Console.WriteLine($"{i + 1} :  Duck House has {farm.DuckHouses[i].duckCount()} ducks");
                     }
-                    else
-                    {
-                        Console.WriteLine($"{i + 1} :  Duck House is full {farm.DuckHouses[i].duckCount()}");
-                    }
+                    // else
+                    // {
+                    //     Console.WriteLine($"{i + 1} :  Duck House is full {farm.DuckHouses[i].duckCount()}");
+                    // }
                 }
 
             }
@@ -40,9 +51,11 @@ namespace Trestlebridge.Actions
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine()) - 1;
-            if (farm.DuckHouses[choice].duckCount() < farm.DuckHouses[choice].Capacity)
+
+
+            if (farm.DuckHouses[choice].duckCount() + manyDucks.Count() <= farm.DuckHouses[choice].Capacity)
             {
-                farm.DuckHouses[choice].AddResource(duck);
+                farm.DuckHouses[choice].AddResource(manyDucks);
             }
             else
             {
@@ -84,7 +97,6 @@ namespace Trestlebridge.Actions
                         break;
                 }
 
-                ChooseDuckHouse.CollectInput(farm, duck);
             }
         }
     }
