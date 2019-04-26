@@ -49,7 +49,7 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine()) - 1;
 
-            if (farm.ChickenHouses[choice].chickenCount() + manyChickens.Count() <= farm.GrazingFields[choice].Capacity)
+            if (farm.ChickenHouses[choice].chickenCount() + manyChickens.Count() <= farm.ChickenHouses[choice].Capacity)
             {
                 farm.ChickenHouses[choice].AddResource(manyChickens);
             }
