@@ -9,7 +9,7 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
-        // public object ChickenHouses { get; internal set; }
+
 
         public List<PlowedField> PlowedFields {get; } = new List<PlowedField>();
 
@@ -23,7 +23,9 @@ namespace Trestlebridge.Models
             resource being purchased.
          */
         public void PurchaseResource<T> (IResource resource, int index)
+
         {
+            //
             Console.WriteLine(typeof(T).ToString());
             switch (typeof(T).ToString())
             {
@@ -53,6 +55,9 @@ namespace Trestlebridge.Models
             }
         }
 
+
+        // methods that will take in the new custom type and add them to their respective Lists above //
+
         public void AddGrazingField (GrazingField field)
         {
             GrazingFields.Add(field);
@@ -76,6 +81,10 @@ namespace Trestlebridge.Models
         {
             DuckHouses.Add(house);
         }
+
+
+        // ToString method that overides the initial method, appends each field and puts them in report //
+
 
         public override string ToString()
         {
