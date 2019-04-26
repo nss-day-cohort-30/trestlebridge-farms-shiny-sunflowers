@@ -97,7 +97,6 @@ namespace Trestlebridge.Actions
                         break;
                 }
 
-                ChooseDuckHouse.CollectInput(farm, duck);
             }
         }
     }

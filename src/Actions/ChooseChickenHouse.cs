@@ -84,7 +84,6 @@ namespace Trestlebridge.Actions
                         break;
                 }
 
-                ChooseChickenHouse.CollectInput(farm, chicken);
             }
         }
     }
