@@ -52,31 +52,29 @@ namespace Trestlebridge.Models.Facilities
             if (this._animals.Count > 1 || this._animals.Count == 0)
             {
                 output.Append($"Grazing field {shortId} has {this._animals.Count}  animals\n");
-
-                this._animals.ForEach(a => output.Append($"   {a}\n"));
                 var animalTypes = _animals.GroupBy(thisType => thisType.Type);
-
                 foreach (var type in animalTypes)
                 {
                     output.Append($@"
 this grazing field has {type.Count()} {type.Key}s
 ");
                 }
-
+                this._animals.ForEach(a => output.Append($"   {a}\n"));
             }
-            else
+            else if (this._animals.Count == 1)
             {
                 output.Append($"Grazing field {shortId} has {this._animals.Count} animal\n");
-                this._animals.ForEach(a => output.Append($"   {a}\n"));
+                // this._animals.ForEach(a => output.Append($"   {a}\n"));
                 var animalTypes = _animals.GroupBy(thisType => thisType.Type);
 
                 foreach (var type in animalTypes)
                 {
                     output.Append($@"
 this grazing field has {type.Count()} {type.Key}
+
 ");
+                this._animals.ForEach(a => output.Append($"   {a}\n"));
                 }
-                // this._animals.ForEach(a => output.Append($"   {a}\n"));
             }
             return output.ToString();
         }
