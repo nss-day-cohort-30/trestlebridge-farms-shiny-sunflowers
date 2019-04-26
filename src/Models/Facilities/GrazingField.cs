@@ -58,7 +58,7 @@ namespace Trestlebridge.Models.Facilities
                     output.Append($@"
 this grazing field has {type.Count()} {type.Key}s
 ");
-                }
+                }3
                 this._animals.ForEach(a => output.Append($"   {a}\n"));
             }
             else if (this._animals.Count == 1)
