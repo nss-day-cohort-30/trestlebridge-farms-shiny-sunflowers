@@ -23,6 +23,7 @@ namespace Trestlebridge.Actions
       Console.Write("> ");
 
       int number = Int32.Parse(Console.ReadLine());
+      
       List<ISeedProducing> manyPlants = Enumerable.Repeat(plant, number).ToList();
 
 

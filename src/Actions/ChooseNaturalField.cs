@@ -21,6 +21,7 @@ namespace Trestlebridge.Actions
           // Use Enumberable.Repeat() to put x("number") amount of plants("plant") in new list named "manyPlants"
             Console.Write("> ");
             int number = Int32.Parse(Console.ReadLine());
+            
             List<ICompostProducing> manyPlants = Enumerable.Repeat(plant, number).ToList();
 
             Console.Clear();
