@@ -28,8 +28,8 @@ namespace Trestlebridge
 
             while (true)
             {
-                try
-                {
+                // try
+                // {
 
                     DisplayBanner();
                     Console.WriteLine("1. Create Facility");
@@ -77,14 +77,14 @@ namespace Trestlebridge
                         Console.WriteLine($"Invalid option: {option}");
                         Console.ReadLine();
                     }
-                }
+                // }
 
-                catch
-                {
-                    Console.WriteLine("oops, not a valid option. Try again");
-                    Console.ReadLine();
+                // catch
+                // {
+                //     Console.WriteLine("oops, not a valid option. Try again");
+                //     Console.ReadLine();
 
-                }
+                // }
             }
         }
     }

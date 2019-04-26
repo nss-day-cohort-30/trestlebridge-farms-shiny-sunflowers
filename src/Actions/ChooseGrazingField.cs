@@ -35,10 +35,10 @@ namespace Trestlebridge.Actions
         {
           Console.WriteLine($"{i + 1}. Grazing Field ({farm.GrazingFields[i].animalCount()} animals)");
         }
-        else
-        {
-          Console.WriteLine($"{i + 1}. Grazing Field is full. ({farm.GrazingFields[i].animalCount()} animals)");
-        }
+        // else
+        // {
+        //   Console.WriteLine($"{i + 1}. Grazing Field is full. ({farm.GrazingFields[i].animalCount()} animals)");
+        // }
       }
 
       Console.WriteLine();

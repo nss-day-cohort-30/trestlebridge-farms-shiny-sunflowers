@@ -23,7 +23,7 @@ namespace Trestlebridge.Actions
       Console.Write("> ");
 
       int number = Int32.Parse(Console.ReadLine());
-      
+
       List<ISeedProducing> manyPlants = Enumerable.Repeat(plant, number).ToList();
 
 
@@ -39,10 +39,10 @@ namespace Trestlebridge.Actions
         {
           Console.WriteLine($"{i + 1}. Plowed Field ({farm.PlowedFields[i].plantCount()} rows of plants)");
         }
-        else
-        {
-          Console.WriteLine($"{i + 1}. Plowed Field is full. ({farm.PlowedFields[i].plantCount()} rows of plants)");
-        }
+        // else
+        // {
+        //   Console.WriteLine($"{i + 1}. Plowed Field is full. ({farm.PlowedFields[i].plantCount()} rows of plants)");
+        // }
       }
       Console.WriteLine();
 
