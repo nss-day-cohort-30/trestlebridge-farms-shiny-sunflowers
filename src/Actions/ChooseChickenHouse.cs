@@ -47,9 +47,13 @@ namespace Trestlebridge.Actions
             else
             {
                 Console.WriteLine($@"
-*************** I'm sorry, that facility is at capacity. ***************
+~ I'm sorry! That facility can only hold ({farm.ChickenHouses[0].Capacity}) chickens ~
+
+************************************************************************
 **************      Please choose another facility.     ****************
-******* If there are no other chicken houses available, build one.  ****
+********** If there are no other natural fields, build one.  ***********
+************************************************************************
+
 -----------------------((press enter to continue))----------------------
 ");
                 Console.ReadLine();
@@ -71,6 +75,9 @@ namespace Trestlebridge.Actions
                     // go to the chickenhouse menu and pass the farm and chicken in.
                     case 1:
                         farm.AddChickenHouse(new ChickenHouse());
+                        Console.Clear();
+                        Console.WriteLine("Success! One Chicken House Added. Press enter to continue.");
+                        Console.ReadLine();
                         ChooseChickenHouse.CollectInput(farm, chicken);
                         break;
                     case 2:

@@ -64,7 +64,9 @@ namespace Trestlebridge.Actions
         Console.WriteLine($@"
 *************** I'm sorry, that facility is at capacity. ***************
 **************      Please choose another facility.     ****************
-******* If there are no other Grazing Fields available, build one.  ****
+********** If there are no other natural fields, build one.  ***********
+************************************************************************
+
 -----------------------((press enter to continue))----------------------
               ");
         Console.ReadLine();
