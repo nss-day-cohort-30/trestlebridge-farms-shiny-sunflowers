@@ -13,12 +13,12 @@ namespace Trestlebridge.Actions
     {
         public static void CollectInput(Farm farm, ICompostProducing plant)
         {
-          //Ask the user how many plants they want to plant
+            //Ask the user how many plants they want to plant
             Console.Clear();
-            Console.WriteLine($"How many {plant.Type} would you like to plant?");
+            Console.WriteLine($"How many {plant.Type}s would you like to plant?");
 
-          // store that number in the variable "number"
-          // Use Enumberable.Repeat() to put x("number") amount of plants("plant") in new list named "manyPlants"
+            // store that number in the variable "number"
+            // Use Enumberable.Repeat() to put x("number") amount of plants("plant") in new list named "manyPlants"
             Console.Write("> ");
             int number = Int32.Parse(Console.ReadLine());
             List<ICompostProducing> manyPlants = Enumerable.Repeat(plant, number).ToList();
@@ -44,7 +44,7 @@ namespace Trestlebridge.Actions
             Console.WriteLine();
 
             // How can I output the type of plant chosen here?
-            Console.WriteLine($"Place the {plant.Type} where?");
+            Console.WriteLine($"Place the {plant.Type}s where?");
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine()) - 1;
@@ -86,6 +86,9 @@ namespace Trestlebridge.Actions
                     // go to the ChooseNaturalField menu and pass the plant and farm
                     case 1:
                         farm.AddNaturalField(new NaturalField());
+                        Console.Clear();
+                        Console.WriteLine("Success! One Natural Field Added. Press enter to continue.");
+                        Console.ReadLine();
                         ChooseNaturalField.CollectInput(farm, plant);
                         break;
                     case 2:

@@ -75,6 +75,9 @@ namespace Trestlebridge.Actions
                     // go to the chickenhouse menu and pass the farm and chicken in.
                     case 1:
                         farm.AddChickenHouse(new ChickenHouse());
+                        Console.Clear();
+                        Console.WriteLine("Success! One Chicken House Added. Press enter to continue.");
+                        Console.ReadLine();
                         ChooseChickenHouse.CollectInput(farm, chicken);
                         break;
                     case 2:

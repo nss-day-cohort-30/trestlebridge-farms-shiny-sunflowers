@@ -73,6 +73,9 @@ namespace Trestlebridge.Actions
                     // go to the ChooseGrazingField menu and pass the animal and farm
                     case 1:
                         farm.AddGrazingField(new GrazingField());
+                        Console.Clear();
+                        Console.WriteLine("Success! One Grazing Field Added. Press enter to continue.");
+                        Console.ReadLine();
                         ChooseGrazingField.CollectInput(farm, animal);
                         break;
                     case 2:

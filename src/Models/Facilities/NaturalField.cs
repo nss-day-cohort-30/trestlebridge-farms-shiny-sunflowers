@@ -47,14 +47,23 @@ namespace Trestlebridge.Models.Facilities
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
+            var groupedPlantList = _plants
+    .GroupBy(p => p.Type)
+    .Select(grp => grp.ToList())
+    .ToList();
+
+    for (var i = 0; i < groupedPlantList.Count; i++) {
+    Console.WriteLine($"{groupedPlantList[i].Count} {groupedPlantList[i].Type}");
+    }
+
             if (this._plants.Count > 1 || this._plants.Count == 0)
             {
-                output.Append($"Natural field {shortId} has {this._plants.Count} plants\n");
+                output.Append($"Natural field {shortId} has {_plants.Count} rows of plants\n");
                 this._plants.ForEach(a => output.Append($"   {a}\n"));
-            }
+    }
             else
             {
-                output.Append($"Natural field {shortId} has {this._plants.Count} plant\n");
+                output.Append($"Natural field {shortId} has {this._plants.Count} row of plants\n");
                 this._plants.ForEach(a => output.Append($"   {a}\n"));
             }
 
