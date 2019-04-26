@@ -48,18 +48,23 @@ namespace Trestlebridge.Models.Facilities
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
             var groupedPlantList = _plants
-    .GroupBy(p => p.Type)
-    .Select(grp => grp.ToList())
-    .ToList();
+            .GroupBy(p => p.Type)
+            .Select(grp => grp.ToList())
+            .ToList();
+
+    Dictionary<string, int> plantedPlants = new Dictionary<string, int>();
 
     for (var i = 0; i < groupedPlantList.Count; i++) {
-    Console.WriteLine($"{groupedPlantList[i].Count} {groupedPlantList[i].Type}");
+    plantedPlants.Add(groupedPlantList[i][0].Type, groupedPlantList[i].Count);
     }
+
+    string s = string.Join(", ", plantedPlants.Select(x => x.Key + " " + x.Value).ToArray());
 
             if (this._plants.Count > 1 || this._plants.Count == 0)
             {
-                output.Append($"Natural field {shortId} has {_plants.Count} rows of plants\n");
-                this._plants.ForEach(a => output.Append($"   {a}\n"));
+                output.Append($"Natural field {shortId} ({s})\n");
+                // output.Append($"Natural field {shortId} has {_plants.Count} rows of plants\n");
+                // this._plants.ForEach(a => output.Append($"   {a}\n"));
     }
             else
             {
