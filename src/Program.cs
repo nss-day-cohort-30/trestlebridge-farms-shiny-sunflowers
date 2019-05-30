@@ -9,8 +9,6 @@ namespace Trestlebridge
     {
         static void DisplayBanner()
 
-
-
         {
             Console.Clear();
             Console.WriteLine();
